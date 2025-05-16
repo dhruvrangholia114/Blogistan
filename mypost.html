@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogistan - My Posts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3e5ea;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #ecf3f9;
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      width: 100%;
+    }
+
+    header h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 34px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+      margin: 12px 0;
+    }
+
+    header h1:hover {
+      color: #007bff;
+    }
+
+    header p:hover {
+      color: #007bff;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #8a8a8a;
+      margin: 5px 0 0;
+    }
+
+    .main_container {
+      width: 80%;
+      max-width: 1050px;
+      padding: 13px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 13px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .secondary-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333333;
+      margin: 20px 0;
+      margin-top: 0px;
+    }
+
+    .story {
+      width: 80%;
+      padding: 15px;
+      margin-bottom: 15px;
+      margin-top: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f6f6;
+    }
+
+    .story-header {
+      font-size: 15px;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .story-header .author {
+      display: flex;
+      align-items: center;
+    }
+
+    .story-header .author img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .story-header .date {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .story-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .story-content {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .story-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .story-footer .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .story-footer .actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .story-footer .actions button:hover {
+      color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Blogistan</h1>
+    <p style="font-style: italic;">A directory of wonderful things</p>
+  </header>
+
+  <div class="main_container">
+    <div class="container">
+
+      <div class="secondary-title">My Posts</div>
+
+
+      <div class="story">
+        <div class="story-header">
+          <div class="author">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.E4IJcali_762Oo_vNhhbFgHaEK&pid=Api&P=0&h=180" alt="Avatar" />
+            <span>Sumit_89</span>
+          </div>
+          <span class="date">Jan 7, 24</span>
+        </div>
+        <div class="story-title">Welcome to my first vlog.</div>
+        <div class="story-content">
+          Hello everyone, and welcome to my very first blog! This space will be where I share my thoughts, experiences,
+          and everything that inspires me. From life lessons to the little things that make me smile, I’m excited to
+          begin
+          this journey of writing and connecting with you. I hope you’ll join me along the way, and I look forward to
+          sharing
+          stories, tips, and ideas that can spark meaningful conversations. Stay tuned for more!
+        </div>
+        <div class="story-footer">
+          <div class="actions">
+            <button><i class="fas fa-arrow-up"></i> Upvote 1.2K</button>
+            <button><i class="fas fa-arrow-down"></i> Downvote</button>
+            <button><i class="fas fa-comment"></i> 25</button>
+            <button><i class="fas fa-share"></i> 91</button>
+            <button>
+              <a href="editpost.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-edit"></i><b> Edit</b>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-header">
+          <div class="author">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.E4IJcali_762Oo_vNhhbFgHaEK&pid=Api&P=0&h=180" alt="Avatar" />
+            <span>Sumit_89</span>
+          </div>
+          <span class="date">Jan 20, 24</span>
+        </div>
+        <div class="story-title">This is a new update!</div>
+        <div class="story-content">
+          I just updated my profile and made some changes. Excited to share more with you all soon. Stay tuned for
+          upcoming posts!
+        </div>
+        <div class="story-footer">
+          <div class="actions">
+            <button><i class="fas fa-arrow-up"></i> Upvote 300</button>
+            <button><i class="fas fa-arrow-down"></i> Downvote</button>
+            <button><i class="fas fa-comment"></i> 28</button>
+            <button><i class="fas fa-share"></i> 6</button>
+            <button>
+              <a href="editpost.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-edit"></i><b> Edit</b>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-header">
+          <div class="author">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.E4IJcali_762Oo_vNhhbFgHaEK&pid=Api&P=0&h=180" alt="Avatar" />
+            <span>Sumit_89</span>
+          </div>
+          <span class="date">Feb 25, 24</span>
+        </div>
+        <div class="story-title">"Exploring the World of Computer Science: My Journey So Far"</div>
+        <div class="story-content">
+          As a student of computer science, I’ve had the privilege of diving into a fascinating world of technology,
+          problem-solving, and endless possibilities. From learning the fundamentals of programming to exploring
+          algorithms and
+          data structures, each step in this journey has been both challenging and rewarding. In this blog, I’ll be
+          sharing my experiences,
+          insights, and what I’ve learned so far about the ever-evolving field of computer science. Whether you're a
+          fellow student,
+          a tech enthusiast, or someone curious about what it takes to study this discipline, I hope to offer a glimpse
+          into the exciting
+          challenges and breakthroughs I’ve encountered along the way.
+        </div>
+        <div class="story-footer">
+          <div class="actions">
+            <button><i class="fas fa-arrow-up"></i> Upvote 159</button>
+            <button><i class="fas fa-arrow-down"></i> Downvote</button>
+            <button><i class="fas fa-comment"></i> 25</button>
+            <button><i class="fas fa-share"></i> 91</button>
+            <button>
+              <a href="editpost.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-edit"></i><b> Edit</b>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-header">
+          <div class="author">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.E4IJcali_762Oo_vNhhbFgHaEK&pid=Api&P=0&h=180" alt="Avatar" />
+            <span>Sumit_89</span>
+          </div>
+          <span class="date">Apr 19, 24</span>
+        </div>
+        <div class="story-title">"Appreciating Nature: A Simple Escape"</div>
+        <div class="story-content">
+          Nature is all around us, and sometimes it’s easy to forget how calming it can be. From the trees to the birds
+          and the fresh air,
+          spending time outside can help clear your mind and feel more peaceful. In this blog, I’ll talk about why
+          nature is so special,
+          how I enjoy being outside, and why we should all take a little more time to appreciate the world around us.
+          Nature is a simple
+          but powerful way to relax and find joy.
+        </div>
+        <div class="story-footer">
+          <div class="actions">
+            <button><i class="fas fa-arrow-up"></i> Upvote 300</button>
+            <button><i class="fas fa-arrow-down"></i> Downvote</button>
+            <button><i class="fas fa-comment"></i> 24</button>
+            <button><i class="fas fa-share"></i> 5</button>
+            <button>
+              <a href="editpost.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-edit"></i><b> Edit</b>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="story-header">
+          <div class="author">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.E4IJcali_762Oo_vNhhbFgHaEK&pid=Api&P=0&h=180" alt="Avatar" />
+            <span>Sumit_89</span>
+          </div>
+          <span class="date">Jun 5, 24</span>
+        </div>
+        <div class="story-title">My journey at the university of the Regina so far.</div>
+        <div class="story-content">
+          It's hard to believe that I’ve already spent a year and a half at the University of Regina. Looking back, it’s
+          been a
+          rollercoaster of experiences. I’ve met some incredible people, faced challenges I never expected, and grown in
+          ways I never
+          anticipated. This blog will take you through my journey so far, including what I’ve learned, what’s surprised
+          me, and
+          what I’m excited to tackle next in my academic career.
+        </div>
+        <div class="story-footer">
+          <div class="actions">
+            <button><i class="fas fa-arrow-up"></i> Upvote 100</button>
+            <button><i class="fas fa-arrow-down"></i> Downvote</button>
+            <button><i class="fas fa-comment"></i> 22</button>
+            <button><i class="fas fa-share"></i> 3</button>
+            <button>
+              <a href="editpost.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-edit"></i><b> Edit</b>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

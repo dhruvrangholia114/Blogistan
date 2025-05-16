@@ -1,0 +1,320 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grant/Revoke Access</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3e5ea;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #ecf3f9;
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      width: 100%;
+    }
+
+    header h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 34px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+      margin: 12px 0;
+    }
+
+    header h1:hover {
+      color: #007bff;
+    }
+
+    header p:hover {
+      color: #007bff;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #8a8a8a;
+      margin: 5px 0 0;
+    }
+
+    .container {
+      margin: 20px auto;
+      max-width: 750px;
+      background-color: #ffffff;
+      padding: 20px;
+      margin-top: 13px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .topic-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .story {
+      width: 80%;
+      padding: 15px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-left: 55px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f6f6;
+    }
+
+    .story-header {
+      font-size: 15px;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .story-header .author {
+      display: flex;
+      align-items: center;
+    }
+
+    .story-header .author img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .story-header .date {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .story-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .story-content {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .caption {
+      font-size: 19px;
+      color: #232323;
+      margin-top: 10px;
+      text-align: center;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .story-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .story-footer .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .story-footer .actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .story-footer .actions button:hover {
+      color: #000000;
+    }
+
+    .user-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .user-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .user-info span {
+      font-size: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .access-checkbox {
+      margin-right: 10px;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 50px;
+    }
+
+    .action-buttons button {
+      padding: 10px 22px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #2d2b2b;
+      border: none;
+      border-radius: 20px;
+      background-color: #e7e8ea;
+      border: 1px solid #d0cfcf;
+      cursor: pointer;
+    }
+
+    .action-buttons button:hover {
+      background-color: #e7e6e6;
+      color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Blogistan</h1>
+    <p style="font-style: italic;">A directory of wonderful things</p>
+  </header>
+
+  <div class="container">
+    <div class="topic-title">Topic: <span id="topic-title">Computer Science</span></div>
+    <ul class="user-list">
+
+      <div class="story">
+        <div class="story-header">
+          <div class="author">
+            <img
+              src="https://images.desenio.com/zoom/wb0125-8batman-portrait50x70-55544-10774.jpg?auto=compress%2Cformat&fit=max&w=3840"
+              alt="Avatar" />
+            <span><b>Dhruv_114</b></span>
+          </div>
+          <span class="date">Apr 19, 24</span>
+        </div>
+        <div class="story-title">Coding Chronicles: My Computer Science Adventure?</div>
+        <div class="story-content">
+          Embarking on my computer science journey has been a transformative experience. From my first "Hello, World!"
+          program to
+          developing complex algorithms, each step has been a blend of challenges and triumphs. The thrill of solving
+          problems and
+          the joy of creating something from scratch have fueled my passion. Along the way, I've learned the importance
+          of perseverance,
+          collaboration, and continuous learning. The ever-evolving nature of technology keeps me curious and motivated.
+          As I look ahead, I'm excited about the endless possibilities and the impact I can make in the world of
+          technology.
+        </div>
+        <div class="story-footer">
+          <div class="actions">
+            <button><i class="fas fa-arrow-up"></i> Upvote 1.5K</button>
+            <button><i class="fas fa-arrow-down"></i> Downvote</button>
+            <button><i class="fas fa-comment"></i> 214</button>
+            <button><i class="fas fa-share"></i> 23</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="caption">Allow User To Access Your Story</div>
+
+      <li class="user-item">
+        <div class="user-info">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZrEn3sc2ekIlCy2S6LvoJX67JZofWEmewKg&s"
+            alt="User Avatar" />
+          <span>Vaidik29</span>
+        </div>
+        <input type="checkbox" class="access-checkbox" checked />
+      </li>
+
+      <li class="user-item">
+        <div class="user-info">
+          <img
+            src="https://akns-images.eonline.com/eol_images/Entire_Site/2017920/rs_600x600-171020123519-600.thor-ragnarok-4.102017.jpg?fit=around%7C1200:1200&output-quality=90&crop=1200:1200;center,top"
+            alt="User Avatar" />
+          <span>Smit_69</span>
+        </div>
+        <input type="checkbox" class="access-checkbox" />
+      </li>
+
+      <li class="user-item">
+        <div class="user-info">
+          <img src="https://m.media-amazon.com/images/M/MV5BMTI5ODY5NTUzMF5BMl5BanBnXkFtZTcwOTAzNTIzMw@@._V1_.jpg"
+            alt="User Avatar" />
+          <span>Dhruv@287</span>
+        </div>
+        <input type="checkbox" class="access-checkbox" />
+      </li>
+
+      <li class="user-item">
+        <div class="user-info">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvakm_zio2J6a-PadL8SE6DjgZOB_5FlJz3w&s"
+            alt="User Avatar" />
+          <span>Rohan$90</span>
+        </div>
+        <input type="checkbox" class="access-checkbox" />
+      </li>
+
+      <li class="user-item">
+        <div class="user-info">
+          <img src="https://variety.com/wp-content/uploads/2022/05/Doctor-STrange-2.jpg" alt="User Avatar" />
+          <span>Neeraj_898</span>
+        </div>
+        <input type="checkbox" class="access-checkbox" />
+      </li>
+
+      <li class="user-item">
+        <div class="user-info">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.E4IJcali_762Oo_vNhhbFgHaEK&pid=Api&P=0&h=180" alt="User Avatar" />
+          <span>Sumit_89</span>
+        </div>
+        <input type="checkbox" class="access-checkbox" />
+      </li>
+    </ul>
+
+    <div class="action-buttons">
+      <button class="grant-btn">Grant Access</button>
+      <button class="revoke-btn">Revoke Access</button>
+    </div>
+
+  </div>
+</body>
+
+</html>

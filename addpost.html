@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogistan - Add Post</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e3e5ea;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #ecf3f9;
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      width: 100%;
+    }
+
+    header h1 {
+      font-size: 34px;
+      font-weight: bold;
+      color: #333333;
+      margin: 12px 0;
+    }
+
+    header h1:hover {
+      color: #007bff;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #8a8a8a;
+      margin: 5px 0 0;
+    }
+
+    header p:hover {
+      color: #007bff;
+    }
+
+    .container {
+      margin: 30px auto;
+      margin-top: 13px;
+      padding: 25px;
+      background-color: white;
+      border-radius: 10px;
+      width: calc(100% - 40px);
+      max-width: 700px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      margin-bottom: 22px;
+      margin-top: 4px;
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    form input,
+    form textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+      margin-right: 10px;
+    }
+
+    form textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: inline-block;
+      font-size: 17px;
+    }
+
+    #title,
+    #content {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input,
+    textarea,
+    button {
+      width: calc(100% - 10px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 7px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .button-group button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      color: #2d2b2b;
+      cursor: pointer;
+      border: 1px solid #d0cfcf;
+    }
+
+    .button-group .save-btn {
+      background-color: #e1e2e4;
+      font-weight: 550;
+    }
+
+    .button-group .save-btn:hover {
+      background-color: #e7e6e6;
+    }
+
+    .button-group .delete-btn {
+      background-color: #e1e2e4;
+      font-weight: 550;
+    }
+
+    .button-group .delete-btn:hover {
+      background-color: #e7e6e6;
+    }
+
+    .button-group .publish-btn {
+      background-color: #e1e2e4;
+    }
+
+    .button-group .publish-btn:hover {
+      background-color: #e7e6e6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Blogistan</h1>
+    <p style="font-style: italic;">A directory of wonderful things</p>
+  </header>
+
+  <div class="container">
+    <h2>Create a New Post</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title" placeholder="Enter the title of your post here..." required>
+      </div>
+      <div>
+        <label for="content">Body: </label>
+        <textarea id="content" name="content" placeholder="Write your post here..." required></textarea>
+      </div>
+      <div>
+        <label for="image">Upload an Image: </label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+      <div class="button-group">
+        <button type="button" onclick="location.href='mainpage.html'"><i class="save-btn"></i><b>Save</b></button>
+        <button type="button" onclick="location.href='mainpage.html'"><i class="delete-btn"></i><b>Delete</b></button>
+        <button type="button" onclick="location.href='mainpage.html'"><i class="publish-btn"></i><b>Publish</b></button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+

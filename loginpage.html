@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogistan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3e5ea;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ecf3f9;
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    header h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 34px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+      margin: 12px 0;
+    }
+
+    header h1:hover {
+      color: #007bff;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #8a8a8a;
+      margin: 5px 0 0;
+    }
+
+    header p:hover {
+      color: #007bff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      margin: 13px;
+      margin-left: 150px;
+      margin-right: 175px;
+    }
+
+    .left-panel {
+      width: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      margin-right: 13px;
+    }
+
+    .left-panel h2 {
+      font-size: 25px;
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    .left-panel form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left-panel label {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .left-panel input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .left-panel button {
+      padding: 10px;
+      font-weight: 550;
+      color: #2d2b2b;
+      border: none;
+      margin-left: 12%;
+      margin-right: 12%;
+      background-color: #f2f3f4;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 18.5px;
+      cursor: pointer;
+    }
+
+    .left-panel button:hover {
+      background-color: #e7e6e6;
+    }
+
+    .left-panel .links {
+      margin-top: 12px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .left-panel .links a {
+      color: #787878;
+      text-decoration: none;
+    }
+
+    .left-panel .links a:hover {
+      text-decoration: underline;
+    }
+
+    .right-panel {
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      margin-right: 20px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 35px;
+      background-color: #f8f9fa;
+    }
+
+    .search-bar i {
+      margin-right: 9px;
+      color: #555;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 4px;
+      font-size: 16.5px;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    .explore-topics {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      margin-left: 38.5%;
+      margin-right: 38.5%;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 35px;
+      cursor: pointer;
+    }
+
+    .explore-topics:hover {
+      background-color: #e7e6e6;
+    }
+
+    .explore-topics i {
+      margin-right: 7px;
+      color: #242323;
+    }
+
+    .explore-topics span {
+      font-size: 17px;
+      font-weight: 550;
+      color: #2d2b2b;
+    }
+
+    .explore-topics span:hover {
+      color: #000000;
+    }
+
+    .recommended-stories .story {
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f6f6;
+    }
+
+    .story-header {
+      font-size: 15px;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .story-header .author {
+      display: flex;
+      align-items: center;
+    }
+
+    .story-header .author img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .story-header .date {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .story-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .story-content {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .story-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .story-footer .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .story-footer .actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .story-footer .actions button:hover {
+      color: #000000;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .user-info span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Blogistan</h1>
+    <p style="font-style: italic;">A directory of wonderful things</p>
+  </header>
+
+  <div class="container">
+    <div class="left-panel">
+      <h2>LOGIN</h2>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" onclick="event.preventDefault(); location.href='mainpage.html'">Submit</button>
+      </form>
+
+      <div class="links">
+        <a href="#">Forgot Password?</a>
+        <br>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" required>
+      </div>
+
+      <div class="explore-topics">
+        <i class="fas fa-compass"></i>
+        <span>Explore Topics</span>
+      </div>
+
+      <p style="font-size: large; font-weight:450;">Recommended Stories</p>
+      <div class="recommended-stories">
+        <!-- Repeat story structure below for more stories -->
+        <div class="story">
+          <div class="story-header">
+            <div class="author">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZrEn3sc2ekIlCy2S6LvoJX67JZofWEmewKg&s" alt="Avatar">
+              <span>Vaidik29</span>
+            </div>
+            <span class="date">Feb 11, 24</span>
+          </div>
+          <div class="story-title">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+          <div class="story-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit Aliquam delectus magni magnam temporibus voluptatem
+            deleniti rerum odio voluptates distinctio molestias. beatae impedit in sed similique saepe illo, doloribus
+            iste quasi error veritatis eligendi!
+          </div>
+          <div class="story-footer">
+            <div class="actions">
+              <button><i class="fas fa-arrow-up"></i> Upvote 121K</button>
+              <button><i class="fas fa-arrow-down"></i> Downvote</button>
+              <button><i class="fas fa-comment"></i> 145</button>
+              <button><i class="fas fa-share"></i> 10</button>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="story">
+          <div class="story-header">
+            <div class="author">
+              <img
+                src="https://akns-images.eonline.com/eol_images/Entire_Site/2017920/rs_600x600-171020123519-600.thor-ragnarok-4.102017.jpg?fit=around%7C1200:1200&output-quality=90&crop=1200:1200;center,top"
+                alt="Avatar">
+              <span>Smit_69</span>
+            </div>
+            <span class="date">Sep 02, 24</span>
+          </div>
+          <div class="story-title">Lorem ipsum dolor sit amet?</div>
+          <div class="story-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur adipisicing elit. Totam assumenda
+            quas est repellendus nisi optio quod? Dolor maiores incidunt veritatis itaque est, earum consequatur eum
+            sapiente hic ducimus, cum iusto! maxime vero cum ullam vitae sapiente consequatur accusantium vel velit
+            libero corrupti molestias dolore, asperiores reiciendis.
+          </div>
+          <div class="story-footer">
+            <div class="actions">
+              <button><i class="fas fa-arrow-up"></i> Upvote 5.2K</button>
+              <button><i class="fas fa-arrow-down"></i> Downvote</button>
+              <button><i class="fas fa-comment"></i> 129</button>
+              <button><i class="fas fa-share"></i> 14</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="story">
+          <div class="story-header">
+            <div class="author">
+              <img src="https://m.media-amazon.com/images/M/MV5BMTI5ODY5NTUzMF5BMl5BanBnXkFtZTcwOTAzNTIzMw@@._V1_.jpg"
+                alt="Avatar">
+              <span>Dhruv@287</span>
+            </div>
+            <span class="date">Mar 17, 24</span>
+          </div>
+          <div class="story-title">Lorem ipsum dolor junk amet adipisicing.</div>
+          <div class="story-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Exercitationem, soluta! exercitationem.
+            ipsum iste quasi error veritatis eligendi!
+          </div>
+          <div class="story-footer">
+            <div class="actions">
+              <button><i class="fas fa-arrow-up"></i> Upvote 1.1K</button>
+              <button><i class="fas fa-arrow-down"></i> Downvote</button>
+              <button><i class="fas fa-comment"></i> 11</button>
+              <button><i class="fas fa-share"></i> 6</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="story">
+          <div class="story-header">
+            <div class="author">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvakm_zio2J6a-PadL8SE6DjgZOB_5FlJz3w&s"
+                alt="Avatar">
+              <span>Rohan$90</span>
+            </div>
+            <span class="date">May 19, 24</span>
+          </div>
+          <div class="story-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi?</div>
+          <div class="story-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eius quae cum maiores suscipit, vel dolores
+            asperiores reiciendis placeat adipisci libero eos, ducimus corrupti molestiae aliquid esse, ullam labore
+            repellat
+            sit assumenda exercitationem laboriosam animi?
+          </div>
+          <div class="story-footer">
+            <div class="actions">
+              <button><i class="fas fa-arrow-up"></i> Upvote 1.5K</button>
+              <button><i class="fas fa-arrow-down"></i> Downvote</button>
+              <button><i class="fas fa-comment"></i> 54</button>
+              <button><i class="fas fa-share"></i> 21</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="story">
+          <div class="story-header">
+            <div class="author">
+              <img src="https://variety.com/wp-content/uploads/2022/05/Doctor-STrange-2.jpg" alt="Avatar">
+              <span>Neeraj_898</span>
+            </div>
+            <span class="date">Mar 16, 24</span>
+          </div>
+          <div class="story-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis dolorem!!
+          </div>
+          <div class="story-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sapiente facilis laborum
+            aperiam recusandae earum sint provident culpa? Officiis magnam iure expedita alias voluptatem ullam commodi!
+          </div>
+          <div class="story-footer">
+            <div class="actions">
+              <button><i class="fas fa-arrow-up"></i> Upvote 3.1K</button>
+              <button><i class="fas fa-arrow-down"></i> Downvote</button>
+              <button><i class="fas fa-comment"></i> 290</button>
+              <button><i class="fas fa-share"></i> 61</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
